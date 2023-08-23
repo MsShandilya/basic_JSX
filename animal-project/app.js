@@ -8,6 +8,13 @@ const root = createRoot(container);
 const background = <img className='background' alt='ocean'  src='/images/ocean.jpg' />;
 
 const title = '';
-const animalFacts =  <h1>{title === '' ? 'Click an animal for a fun fact' : title}</h1>;
+const animalFacts =  (
+    <div>
+      {background}
+      <h1>
+        {title === '' ? 'Click an animal for a fun fact' : title}
+      </h1>
+    </div>
+    );
 
 root.render(animalFacts);
