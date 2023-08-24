@@ -6,16 +6,17 @@ const container = document.getElementById('app');
 const root = createRoot(container);
 
 //attribute to store the ocean
-const background = <img className='background' alt='ocean'  src='/images/ocean.jpg' />;
+const background = <img className='background' alt='ocean'  src= {require('./images/ocean.jpg')} />;
 
 // imges placeholder
 const images = [];
-for(let animal in animals){
+for(let animal in animals) {
+  const str = '.'+ animals[animal].image;
   images.push(
     <li>
-      <img  className='animal'  src = {animals[animal].image} aria-label={animal} role= 'button'/>
+      <img className='animal' src = {require(`${str}`)} aria-label={animal} role= 'button'/>
     </li>
-    )
+    );
 }
 
 const title = '';
