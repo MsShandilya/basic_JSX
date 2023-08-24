@@ -6,5 +6,9 @@ export const animals = {
   starfish: {
     image: '/images/starfish.jpg',
     facts: ['Starfish can have up to 40 arms!', 'Starfish have no brain and no blood!', 'Starfish can regenerate their own arms!']
-  }
+  },
+  lobster: {
+    image: '/images/lobster.jpg',
+    facts: ['Lobsters taste with their legs!', 'Lobsters chew with their stomachs!', 'Lobsters can live as long as 100 years.']
+  },
 };
