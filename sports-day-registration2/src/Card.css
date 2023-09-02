@@ -1,0 +1,62 @@
+.card .card__body{
+    display : flex;
+    flex-direction : row;
+    padding: 10px;
+    border-radius:  rgb(141, 14, 14) ;
+}
+
+.card .card_Capital{
+    display : flex;
+    border-right: 1px solid black;
+    padding:10px;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    color: #2CADB2;
+}
+
+.card .card__content{
+    flex-direction : row;
+    text-align: justify;
+    padding-left: 0.5rem;
+
+    .card__img{
+        height: 5rem;
+        object-fit: contain; /* to avoid image cropping */
+    }
+
+    .card__timing{
+        white-space: nowrap; /* snsures in the same liene */
+    }
+}
+
+
+.card{
+    overflow: hidden;
+    box-shadow: 0 2px 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+    transform: scale(1); /* Set the initial scale */
+    margin-trim: all;
+  
+    &:hover { /* Apply a scale transform on hover */
+      transform: scale(1.05); /* increase the size */
+    }
+
+    &:hover .card__button{ /* Apply a scale transform to button when the card is in hover */
+        border: rgba(41, 196, 210, 0.8);
+    }
+
+    .card__button{
+        margin: 0.5rem;
+        font-weight: bold;
+        padding: 0.5rem;
+        transition: 0.1ms ease-in;
+    }
+
+    .card__button:hover{
+        background-color: rgba(41, 196, 210, 0.8);
+   }
+
+}

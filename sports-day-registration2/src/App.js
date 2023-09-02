@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import events from "./mockData";
+import './App.css';
 
 function App() {
   const firstEvent = events[0];

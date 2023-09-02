@@ -2,5 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 
 /* Define a color variable */
-$clr-primary: #2CADB2;
+/* $clr-primary: #2CADB2;*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Oxygen, sans-serif;
+  margin: 2rem;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min-max(12rem, 16rem));
+  gap: 2rem;
+  justify-content: center;
+}
 
