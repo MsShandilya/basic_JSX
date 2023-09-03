@@ -1,24 +1,24 @@
-
+/* App.css */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-
-/* Define a color variable */
-/* $clr-primary: #2CADB2;*/
 
 * {
   margin: 0;
-  padding: 0;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: Oxygen, sans-serif;
-  margin: 2rem;
+  margin: 1rem;
 }
 
-.wrapper{
+.wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, min-max(12rem, 16rem));
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
   gap: 2rem;
   justify-content: center;
 }
 
+.column{
+  padding: 1rem;
+}

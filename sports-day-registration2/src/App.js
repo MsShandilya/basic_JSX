@@ -28,11 +28,26 @@ function App() {
   };
 
   return(
-    <div className="wrapper">
-      <h1>Hello</h1>
-      <EventList selectedEvents={selectedEvents} onEventSelect={handleEventSelect} onEventDeselect={handleEventDeselect} />
-      <SelectedEventsList selectedEvents={selectedEvents} onEventDeselect={handleEventDeselect} />
-    </div>);
+    <>
+      <p>NAMASTE</p>
+      <div className="wrapper">
+        <div className="column">
+          <p>Event Chart</p>
+          <EventList
+            className="allEventsList"
+            selectedEvents={selectedEvents}
+            onEventSelect={handleEventSelect} onEventDeselect={handleEventDeselect} />
+        </div>
+        <div className="column">
+          <p>Your selected events</p>
+          <SelectedEventsList
+            className="selectedEventsList"
+            selectedEvents={selectedEvents}
+            onEventDeselect={handleEventDeselect} />
+        </div>
+      </div>
+    </>
+  );
 }
  
 
