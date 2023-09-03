@@ -4,8 +4,8 @@ import events from './mockData';
 import Card from './Card';
 
 function EventList(){
-    const list = events.map((e) => {
-        return <Card cardEvent={e}/>
+    const list = events.map((e, index) => {
+        return <Card key={index} cardEvent={e}/>
     });
     return list;
 }
