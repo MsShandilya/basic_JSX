@@ -1,23 +1,15 @@
+// Card.js
 import React from "react";
 import backgroundCardImage from './images/dolphin.jpg';
 import './Card.css';
 
 function Card(props) {
     const card_title = props.cardEvent.event_name;
+    const card_Capital = props.cardEvent.event_category[0];
     const card_description = props.cardEvent.event_category;
-    const getTime = (dateTimeString) => {
-      // dateTimeString = "2022-12-17 13:00:00";
-      const dateTime = new Date(dateTimeString);
-
-      const formattedTime = dateTime.toLocaleTimeString('en-US', { hour12: true });
-      return formattedTime; // Output: "13:00:00"
-
-      //`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-    }
     const card_start = getTime(props.cardEvent.start_time);
     const card_endTime = getTime(props.cardEvent.end_time);
-    const card_Capital = props.cardEvent.event_category[0];
+
   return(
   <div className="card">
     <div className="card__body">
@@ -32,7 +24,16 @@ function Card(props) {
         </div>
     </div>
     <button className="card__button">Select Event</button>
-  </div>);
+  </div>
+  );
+}
+
+const getTime = (dateTimeString) => {
+  // dateTimeString = "2022-12-17 13:00:00";
+  const dateTime = new Date(dateTimeString);
+  const formattedTime = dateTime.toLocaleTimeString('en-US', { hour12: true });
+  return formattedTime; // Output: "13:00:00"
+  //`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
 
