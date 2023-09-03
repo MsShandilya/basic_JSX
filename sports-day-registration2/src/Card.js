@@ -9,6 +9,12 @@ function Card(props) {
     const card_description = props.cardEvent.event_category;
     const card_start = getTime(props.cardEvent.start_time);
     const card_endTime = getTime(props.cardEvent.end_time);
+    const card__button_text = props.buttonText;
+
+    const handleSelectEvent = () => {
+      // Call the onEventSelect callback with the selected event
+      props.onEventSelect(props.cardEvent);
+    };
 
   return(
   <div className="card">
@@ -23,7 +29,7 @@ function Card(props) {
             <p className="card__timing">{card_start} - {card_endTime}</p>
         </div>
     </div>
-    <button className="card__button">Select Event</button>
+    <button className="card__button" onClick={handleSelectEvent}>{card__button_text}</button>
   </div>
   );
 }

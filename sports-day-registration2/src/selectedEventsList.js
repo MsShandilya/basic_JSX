@@ -5,9 +5,9 @@ function SelectedEventsList (props) {
 
     if(props.events) {
         const list = props.events.map((e, indx) => {
-            return <Card key={indx} cardEvent={e}/>
+            return <Card key={indx} cardEvent={e} buttonText="UnSelect Event"/>
         });
-        return <div>{list}</div>;
+        return list;
     }
     
     return null;
