@@ -2,15 +2,21 @@
 import React from "react";
 import Card from "./Card";
 function SelectedEventsList (props) {
+    const { selectedEvents, onEventDeselect } = props;
 
-    if(props.events) {
-        const list = props.events.map((e, indx) => {
-            return <Card key={indx} cardEvent={e} buttonText="UnSelect Event"/>
+    if(selectedEvents && selectedEvents.length>0) {
+        const list = selectedEvents.map((e, indx) => {
+            return <Card 
+                        key={indx} 
+                        cardEvent={e} 
+                        buttonText="Deselect Event"
+                        onClick={() => onEventDeselect(e)}
+                    />
         });
         return list;
     }
     
-    return null;
+    return <p>No selected events</p>;
 }
 
 export default SelectedEventsList;

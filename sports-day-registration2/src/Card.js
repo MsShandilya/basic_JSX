@@ -15,6 +15,17 @@ function Card(props) {
       // Call the onEventSelect callback with the selected event
       props.onEventSelect(props.cardEvent);
     };
+    const handleUnselect = () => {
+      // Call the onUnselect callback with the selected event
+      props.onUnselect(props.cardEvent);
+    };
+
+    const handleOnClick = () => {
+      if(card__button_text === 'unselect event') {
+        return handleUnselect;
+      }
+      return handleSelectEvent;
+    }
 
   return(
   <div className="card">
@@ -29,7 +40,7 @@ function Card(props) {
             <p className="card__timing">{card_start} - {card_endTime}</p>
         </div>
     </div>
-    <button className="card__button" onClick={handleSelectEvent}>{card__button_text}</button>
+    <button className="card__button" onClick={handleOnClick}>{card__button_text}</button>
   </div>
   );
 }
