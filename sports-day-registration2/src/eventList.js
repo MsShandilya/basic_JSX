@@ -10,13 +10,13 @@ function EventList(props){
         // Check if the event is selected based on selectedEvents state
         const isSelected = selectedEvents.includes(e);
         const handleOnClick = (e) => {
-            return isSelected ? ()=>onEventDeselect(e) : ()=>onEventSelect(e);
+            isSelected ? onEventDeselect(e) : onEventSelect(e);
         }
         return  (
             <Card   
                 key={index}
                 cardEvent={e} 
-                onClick={() => handleOnClick(e)}
+                onClick={handleOnClick}
                 buttonText={isSelected ? "Deselect Event" : "Select Event"}
              />
         )
