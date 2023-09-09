@@ -2,7 +2,7 @@
 import React from "react";
 import events from './mockData';
 import Card from './Card';
-// import eventList from './eventList.css';
+import './eventList.css';
 
 function EventList(props){
     const { selectedEvents, onEventSelect , onEventDeselect} = props;
@@ -23,7 +23,7 @@ function EventList(props){
         )
     });
     return (
-        <div className="card-container">
+        <div className="event-list">
           {list}
         </div>
       );

@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 import EventList from "./eventList";
 import './App.css';
 import SelectedEventsList from "./selectedEventsList";
 
 function App() {
   const [selectedEvents, setSelectedEvents] = useState([]);
-  const maxSelectedEvents = 3;
+  const [error, setError] = useState('');
+
+  useEffect(()=>{
+    // handle error
+    setError('');
+  }, [selectedEvents]);
+
+  const MAX_SELECTION_ALLOWED = 3;
 
   const handleEventSelect = (event) => {
+
+    if(selectedEvents.length >= MAX_SELECTION_ALLOWED){
+      setError("Cannot select more than 3 events.");
+      return;
+    }
     if (!selectedEvents.includes(event)) {
-      if (selectedEvents.length < maxSelectedEvents) {
         setSelectedEvents([...selectedEvents, event]);
-      } else {
-        console.log("Cannot select more than 3 events.");
-      }
     } else {
       // Deselect the event if it's already selected
       handleEventDeselect(event);
@@ -29,25 +37,31 @@ function App() {
 
   return(
     <>
-      <div className="title-section">
-        <h1>NAMASTE</h1>
+      <div className="pageTitle">
+          <div className="title-section">
+            <h1>NAMASTE</h1>
+          </div>
+          <div className="subTitle">
+            <p>All Sports Event</p>
+            <p>Selected sports</p>
+          </div>
+          {error && <div>{error}</div>}
       </div>
       <div className="wrapper">
         <div className="column">
-          <p className="columnTitle">Event Chart</p>
           <EventList
             className="allEventsList"
             selectedEvents={selectedEvents}
             onEventSelect={handleEventSelect} onEventDeselect={handleEventDeselect} />
         </div>
         <div className="column">
-          <p className="columnTitle">Your selected events</p>
           <SelectedEventsList
             className="selectedEventsList"
             selectedEvents={selectedEvents}
             onEventDeselect={handleEventDeselect} />
           </div>
-        </div>
+      </div>
+
     </>
   );
 }

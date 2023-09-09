@@ -1,34 +1,35 @@
+body{
+  background-color: rgb(0, 0, 0);
+  color: rgb(185, 183, 156);
+  background-image: url('./images/wallpaper3.jpeg');
+  margin: 0px;
+}
+
 .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 
-.column {
+.column{
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-right: 2px solid blueviolet;
 }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.card {
-  flex: 0 0 calc(50% - 20px); /* The "50%" makes it take half the width, and the "- 20px" accounts for margins */
-  margin: 10px;
-}
-
-@media (max-width: 768px) {
-  .card {
-    max-width: 100%;
-  }
-}
-
-.columnTitle{
-  background-color: rgb(139, 109, 186);
+.pageTitle{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+      margin: 0px;
+      background-image: url('./images/wallpaper3.jpeg');
+      padding-top: 0.5rem;
+      text-decoration: underline;
+      
+      .subTitle{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: 1px solid black;
+      }
+      
 }

@@ -1,1 +1,8 @@
 /* eventList.css */
+
+.event-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    flex: 1;
+  }

@@ -1,6 +1,8 @@
 // SelectedEventsList.js
 import React from "react";
+import './eventList.css';
 import Card from "./Card";
+
 function SelectedEventsList (props) {
     const { selectedEvents, onEventDeselect } = props;
 
@@ -14,7 +16,7 @@ function SelectedEventsList (props) {
                     />
         });
         return (
-            <div className="card-container">
+            <div className="event-list">
               {list}
             </div>
           );
