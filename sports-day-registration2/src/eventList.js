@@ -2,6 +2,7 @@
 import React from "react";
 import events from './mockData';
 import Card from './Card';
+// import eventList from './eventList.css';
 
 function EventList(props){
     const { selectedEvents, onEventSelect , onEventDeselect} = props;
@@ -21,7 +22,11 @@ function EventList(props){
              />
         )
     });
-    return list;
+    return (
+        <div className="card-container">
+          {list}
+        </div>
+      );
 }
 
 export default EventList;
