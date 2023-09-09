@@ -8,12 +8,16 @@ function SelectedEventsList (props) {
         const list = selectedEvents.map((e, indx) => {
             return <Card 
                         key={indx} 
-                        cardEvent={e} 
+                        cardEvent={e} x
                         buttonText="Deselect Event"
                         onClick={() => onEventDeselect(e)}
                     />
         });
-        return list;
+        return (
+            <div className="card-container">
+              {list}
+            </div>
+          );
     }
     
     return <p>No selected events</p>;

@@ -29,26 +29,28 @@ function App() {
 
   return(
     <>
-      <p>NAMASTE</p>
+      <div className="title-section">
+        <h1>NAMASTE</h1>
+      </div>
       <div className="wrapper">
         <div className="column">
-          <p>Event Chart</p>
+          <p className="columnTitle">Event Chart</p>
           <EventList
             className="allEventsList"
             selectedEvents={selectedEvents}
             onEventSelect={handleEventSelect} onEventDeselect={handleEventDeselect} />
         </div>
         <div className="column">
-          <p>Your selected events</p>
+          <p className="columnTitle">Your selected events</p>
           <SelectedEventsList
             className="selectedEventsList"
             selectedEvents={selectedEvents}
             onEventDeselect={handleEventDeselect} />
+          </div>
         </div>
-      </div>
     </>
   );
 }
- 
+
 
 export default App;

@@ -1,62 +1,54 @@
-.card .card__body{
-    display : flex;
-    flex-direction : row;
-    padding: 10px;
-    border-radius:  rgb(141, 14, 14) ;
-}
-
-.card .card_Capital{
-    display : flex;
-    border-right: 1px solid black;
-    padding:10px;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Horizontally center the content */
-    color: #2CADB2;
-}
-
-.card .card__content{
-    flex-direction : row;
-    text-align: justify;
-    padding-left: 0.5rem;
-
-    .card__img{
-        height: 5rem;
-        object-fit: contain; /* to avoid image cropping */
-    }
-
-    .card__timing{
-        white-space: nowrap; /* snsures in the same liene */
-    }
-}
-
-
 .card{
-    overflow: hidden;
-    box-shadow: 0 2px 20px;
-    display: flex;
-    flex-direction: column;
+    overflow: scroll;
+    box-shadow: 0 2.5px 2.5px;
     cursor: pointer;
-    transition: transform 200ms ease-in;
+    transition: transform 200ms ease-in; /*set the movement of tile above in 200ms*/
     transform: scale(1); /* Set the initial scale */
-    margin-trim: all;
+
+    height: 5rem;
+    padding: 0rem 0rem 0rem 0rem;
   
     &:hover { /* Apply a scale transform on hover */
-      transform: scale(1.05); /* increase the size */
+      transform: scale(1.02); /* increase the size */
     }
 
     &:hover .card__button{ /* Apply a scale transform to button when the card is in hover */
-        border: rgba(41, 196, 210, 0.8);
+        border: rgba(41, 210, 89, 0.8);
     }
 
-    .card__button{
-        margin: 0.5rem;
-        font-weight: bold;
-        padding: 0.5rem;
-        transition: 0.1ms ease-in;
-    }
+    margin: 0.5rem;
 
-    .card__button:hover{
-        background-color: rgba(41, 196, 210, 0.8);
-   }
+    border-radius: 10px;  /* Rounds the corners */
 
+}
+
+.card__button{
+    font-weight: bold;
+    transition: 0.1ms ease-in;
+}
+
+.card__button:hover{
+    background-color: rgba(41, 196, 210, 0.8);
+}
+
+*{
+    margin: 0px;
+}
+
+.card__body{
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+}
+
+.card_Capital{
+    border-right:  1px solid black;
+
+    /*to align text in centre from columns and rows*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__timing{
+    font-size: 5px;
 }

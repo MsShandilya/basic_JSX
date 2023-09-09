@@ -1,6 +1,6 @@
 // Card.js
 import React from "react";
-import backgroundCardImage from './images/dolphin.jpg';
+// import backgroundCardImage from './images/dolphin.jpg';
 import './Card.css';
 
 function Card(props) {
@@ -17,13 +17,15 @@ function Card(props) {
           <h1>{card_Capital}</h1>
         </div>
         <div className="card__content">
-            <img className="card__img" src={backgroundCardImage} alt="background"/>
-            <h2 className="card__title">{card_title}</h2>
+            <h3 className="card__title">{card_title}</h3>
             <p className="card__description">{card_description}</p>
             <p className="card__timing">{card_start} - {card_endTime}</p>
+            <button 
+                className="card__button" 
+                onClick={() =>props.onClick(props.cardEvent)}>{props.buttonText}
+            </button>
         </div>
     </div>
-    <button className="card__button" onClick={() =>props.onClick(props.cardEvent)}>{props.buttonText}</button>
   </div>
   );
 }
@@ -31,7 +33,7 @@ function Card(props) {
 const getTime = (dateTimeString) => {
   // dateTimeString = "2022-12-17 13:00:00";
   const dateTime = new Date(dateTimeString);
-  const formattedTime = dateTime.toLocaleTimeString('en-US', { hour12: true });
+  const formattedTime = dateTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
   return formattedTime; // Output: "13:00:00"
   //`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
