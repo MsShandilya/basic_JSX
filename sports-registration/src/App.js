@@ -1,8 +1,10 @@
 // App.js
-import React, {useEffect, useState } from "react";
-import EventList from "./eventList";
+import React, {Suspense, lazy, useEffect, useState } from "react";
+// import EventList from "./eventList";
+
 import './App.css';
 import SelectedEventsList from "./selectedEventsList";
+const EventList = lazy(()=>import('./eventList'));
 
 function App() {
   const [selectedEvents, setSelectedEvents] = useState([]);
@@ -65,10 +67,12 @@ function App() {
       </div>
       <div className="wrapper">
         <div className="column">
-          <EventList
-            className="allEventsList"
-            selectedEvents={selectedEvents}
-            onEventSelect={handleEventSelect} onEventDeselect={handleEventDeselect} />
+          <Suspense fallback= {<p>WAIINTG</p>}>
+            <EventList
+              className="allEventsList"
+              selectedEvents={selectedEvents}
+              onEventSelect={handleEventSelect} onEventDeselect={handleEventDeselect} />
+          </Suspense>
         </div>
         <div className="column">
           <SelectedEventsList
