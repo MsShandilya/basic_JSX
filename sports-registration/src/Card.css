@@ -1,0 +1,36 @@
+.card{
+    overflow: scroll; /* in case size is large */
+    box-shadow:  2.5px 2.5px 0.5px;
+  
+    &:hover { /* Apply a scale transform on hover */
+      transform: scale(1.02); /* increase the size */
+    }
+
+    &:hover .card__button{ /* Apply a scale transform to button when the card is in hover */
+        cursor: pointer;
+    }
+
+    margin: 0.5rem;
+    border-radius: 10px;  /* Rounds the corners */
+
+    .card_Capital{
+        /*to align text in centre from columns and rows*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.card__body{
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    font-size: 10px;
+
+    .card__button{
+        font-weight: bold;
+    }
+}
+.card__content {
+    overflow-x: hidden; /* Allow scrolling for the right side if content overflows */
+    padding: 0.5rem;
+  }
