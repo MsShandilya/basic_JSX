@@ -1,5 +1,5 @@
 // EventList.js
-import React from "react";
+import React, {useState, useEffect} from "react";
 import events from './mockData';
 import Card from './Card';
 import './eventList.css';
