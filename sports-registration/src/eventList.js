@@ -5,6 +5,8 @@ import Card from './Card';
 import './eventList.css';
 
 function EventList(props){
+    const EVENT_URL = 'https://run.mocky.io/v3/2744c231-8991-4ae8-bc45-1f645437585a';
+
     const { selectedEvents, onEventSelect , onEventDeselect} = props;
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -16,7 +18,7 @@ function EventList(props){
         }
         else {
             // Fetch event data from the API
-            fetch('https://run.mocky.io/v3/2744c231-8991-4ae8-bc45-1f645437585a')
+            fetch(EVENT_URL)
             .then((response) => response.json())
             .then((data) => {
                 setEvents(data);
