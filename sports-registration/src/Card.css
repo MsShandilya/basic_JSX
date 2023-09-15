@@ -1,12 +1,12 @@
 .card{
-    overflow: scroll; /* in case size is large */
+    overflow: scroll; /* in case lengthy content */
     box-shadow:  2.5px 2.5px 0.5px;
   
     &:hover { /* Apply a scale transform on hover */
       transform: scale(1.02); /* increase the size */
     }
 
-    &:hover .card__button{ /* Apply a scale transform to button when the card is in hover */
+    .card:not(.selected) &:hover .card__button{ /* Apply a scale transform to button when the card is in hover */
         cursor: pointer;
     }
 

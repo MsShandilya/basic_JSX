@@ -35,6 +35,7 @@ function EventList(props){
                 cardEvent={e} 
                 onClick={handleOnClick}
                 buttonText={isSelected ? "Deselect Event" : "Select Event"}
+                disabled={isSelected}
              />
         )
     });

@@ -21,7 +21,8 @@ function Card(props) {
             <p className="card__timing">{card_start} - {card_endTime}</p>
             <button 
                 className="card__button" 
-                onClick={() =>props.onClick(props.cardEvent)}>{props.buttonText}
+                onClick={() =>props.onClick(props.cardEvent)}
+                disabled={props.disabled }>{props.buttonText}
             </button>
         </div>
     </div>
